@@ -7,7 +7,7 @@
   .diamond {
     clip-path: polygon(50% 0%, 100% 50%, 50%, 100%, 0% 50%);
   }
-  
+
   #youtube {
     position: absolute;
     left: 100px;
@@ -16,7 +16,7 @@
     transition-property: border-color;
     transition-delay: 1s;
   }
-  
+
   #youtube:hover {
     border: 10px solid green;
   }
@@ -32,19 +32,19 @@
       'xSE9Qk9wkig',
       'hvL1339luv0'
     ]
-    
-    function randomCatVid () {
+
+    function randomCatVid() {
       const youtube = nn.get('#youtube')
       const id = nn.random(videoIds)
       const url = 'https://www.youtube.com/embed/' + id
-      youtube.setAttribute('src','url')
+      youtube.setAttribute('src', 'url')
       // update source attribute of the original video to the new url
       youtube.style.left = '200px'
     }
-    
+
     nn.get('#new-vid').on('click', randomCatVid)
-    
-    nn.on('click',randomCatVid)
+
+    nn.on('click', randomCatVid)
   </script>
   <script>
     // global nn, Tone, THREE
