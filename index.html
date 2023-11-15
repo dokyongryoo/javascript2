@@ -7,9 +7,17 @@
   .diamond {
     clip-path: polygon(50% 0%, 100% 50%, 50%, 100%, 0% 50%);
   }
+  
+  #youtube {
+    border: 10px solid red;
+  }
+  
+  #youtube:hover {
+    border: 10px solid green;
+  }
 </style>
 <body>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/xSE9Qk9wkig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe id="youtube" src="https://www.youtube.com/embed/xSE9Qk9wkig"></iframe>
   <div class="diamond"></div>
   <div></div>
   <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js">
