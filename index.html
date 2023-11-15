@@ -1,0 +1,47 @@
+<style>
+  .square {
+    height: 100px;
+    display: inline-block;
+  }
+
+  .diamond {
+    clip-path: polygon(50% 0%, 100% 50%, 50%, 100%, 0% 50%);
+  }
+</style>
+<body>
+  <div class="diamond"></div>
+  <div></div>
+  <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js">
+  </script>
+  <script>
+    // global nn, Tone, THREE
+    function newPatch() {
+      // code to create a new div
+      const div = nn.create('div') // <div>
+      const chance = Math.random() // random number from 0-1
+      if (chance > 0.5) {
+        div.setAttribute('class', 'diamond')
+      }
+      div.addTo('body') // add <div> to a specific element of the page
+    }
+    nn.on('click', newPatch)
+    // 1st argument is name of state in strings; 2nd argument is function we want to run when page runs
+    // 1st argument options: load, click
+    // way to do the above with a for loop:
+    let patches = 0
+    while (patches < 100) {
+      newPatch()
+      patches += 10
+    }
+
+    for (let patches = 0; patches < 100; patches++) {
+      newPatch()
+    }
+
+    function animate() {
+      newPatch()
+      setTimeout(animate, 1000) // 2 arguments: function we want to run, how long to delay call to animate in miliseconds
+    }
+    nn.on('load', animate)
+  </script>
+</body>
