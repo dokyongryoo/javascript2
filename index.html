@@ -39,7 +39,8 @@
       const url = 'https://www.youtube.com/embed/' + id
       youtube.setAttribute('src', 'url')
       // update source attribute of the original video to the new url
-      youtube.style.left = '200px'
+      const w = nn.width - 300
+      youtube.style.left = nn.random(w) + 'px'
     }
 
     nn.get('#new-vid').on('click', randomCatVid)
